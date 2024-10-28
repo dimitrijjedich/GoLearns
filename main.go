@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"golang.org/x/tour/pic"
 )
 
 func sqrt(x float64) float64 {
@@ -27,4 +28,5 @@ func Pic(dx, dy int) [][]uint8 {
 
 func main() {
 	fmt.Println("Hello World")
+	pic.Show(Pic)
 }
