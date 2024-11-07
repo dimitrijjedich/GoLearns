@@ -44,7 +44,7 @@ func main() {
 	var result, err = client.Get(apiUrl)
 	if err != nil {
 		fmt.Printf("An error occured:\n")
-		fmt.Prinf(err)
+		fmt.Print(err)
 		return
 	}
 }
