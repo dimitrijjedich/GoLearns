@@ -7,6 +7,5 @@ import (
 func main() {
 	var name string = "Dimitrij"
 	var age int = 30
-	fmt.Println("Hello " + name)
-	fmt.Printf("You are %d years old!", age)
+	fmt.Printf("Hello, %s! You are %d years old!", name, age)
 }
