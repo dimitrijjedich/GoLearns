@@ -1,8 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
+	"time"
 )
 
 type ApiData struct {
@@ -47,4 +50,15 @@ func main() {
 		fmt.Print(err)
 		return
 	}
+	var data []byte
+	data, err = io.ReadAll(result.Body)
+	if err != nil {
+		fmt.Printf("Something went wrong during parsing:\n")
+		fmt.Print(err)
+		return
+	}
+	var bitcoinData ApiData
+	json.Unmarshal(data, &bitcoinData)
+	fmt.Printf("Data from: %v \n", bitcoinData.Time.Updated)
+	fmt.Printf("Data from: %v", bitcoinData.Bpi.EUR.Rate)
 }
